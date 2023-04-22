@@ -1,14 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from '../styles/NavBar.module.css';
 
 // Navigation Bar component used to navigate to different pages
 
 function NavBar() {
   return (
     <div>
-      <Link to="/example">
-        Example
-      </Link>
+      <div className={styles.container}>
+        <h1 className={styles.dopa_mind}>DopaMind</h1>
+        <Link to="/games" className={styles.btn_info}>
+          GAMES
+        </Link>
+        {/* TODO: have requests link instead for admin */}
+        <Link to="/chat" className={styles.btn_info}>
+          CHAT
+        </Link>
+        <Link to="/timer" className={styles.btn_info}>
+          TIMER
+        </Link>
+        <Link to="/resources" className={styles.btn_info}>
+          RESOURCES
+        </Link>
+      </div>
     </div>
   );
 }
