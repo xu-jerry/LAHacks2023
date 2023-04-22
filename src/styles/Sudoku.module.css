@@ -12,8 +12,10 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: calc(100% / 9);
+  height: calc(80% / 6);
   border-bottom: 1px solid #aaa;
+  align-items: center;
+  justify-content: center;
 }
 
 .sudoku_cell {
@@ -22,8 +24,8 @@
   justify-content: center;
   font-size: 24px;
   font-weight: bold;
-  width: calc(99% / 9);
-  height: 100%;
+  width: calc(80% / 6);
+  height: 10vh;
   background-color: #fff;
   border-right: 1px solid #aaa;
 }
@@ -60,4 +62,10 @@
 
 .sudoku_cell.is-filled.is-invalid::before {
   background-color: #f00;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
