@@ -1,8 +1,8 @@
 import { React } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import {
-  Example,
   Home,
+  Transcribble,
   Timer,
   Writing,
   Games,
@@ -18,7 +18,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={(<Home />)} />
-            <Route path="/example" element={(<Example />)} />
+            <Route path="/transcribble" element={(<Transcribble />)} />
             <Route path="/games" element={(<Games />)} />
             <Route path="/timer" element={(<Timer />)} />
             <Route path="/chat" element={(<Writing />)} />

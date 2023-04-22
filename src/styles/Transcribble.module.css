@@ -1,0 +1,52 @@
+.transcribble {
+  padding: 3rem 5rem;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.green_button {
+  border-radius: 10px;
+  border: 3px solid #000000;
+  padding: 0 2em;
+  transition-duration: 0.4s;
+}
+
+.green_button:hover {
+  background-color: #97da99;
+}
+
+.red_button {
+  border-radius: 10px;
+  border: 3px solid #000000;
+  padding: 0 2em;
+  transition-duration: 0.4s;
+}
+
+.red_button:hover {
+  background-color: #e59b9b;
+}
+
+.transcribe_button {
+  border-radius: 10px;
+  border: 3px solid #053924;
+  background-color: #053924;
+  color: white;
+  padding: 0 2em;
+  margin-left: 2rem;
+  transition-duration: 0.4s;
+}
+
+.transcribe_button:hover {
+  background-color: rgba(255, 255, 255, 0);
+  color: black;
+}
+
+.note {
+  margin-top: 2rem;
+  background-color: #a7d6c3;
+  padding: 1rem 2rem;
+  box-shadow: 4px 4px 8px rgba(05, 39, 24, 0.2);
+}
