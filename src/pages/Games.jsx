@@ -1,12 +1,20 @@
 import React from 'react';
 import Sudoku from '../components/Sudoku';
+import Anagrams from '../components/Anagrams';
 
 function Games() {
   return (
     <div>
-      Sudoku:
-      {' '}
-      <Sudoku />
+      <div>
+        Sudoku:
+        {' '}
+        <Sudoku />
+      </div>
+      <div>
+        Anagrams:
+        {' '}
+        <Anagrams />
+      </div>
     </div>
   );
 }
