@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import {
-  Example,
+  Example, Games,
 } from './pages';
 import NavBar from './components/NavBar';
 
@@ -14,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={(<Example />)} />
             <Route path="/example" element={(<Example />)} />
+            <Route path="/games" element={(<Games />)} />
           </Routes>
         </div>
       </div>
