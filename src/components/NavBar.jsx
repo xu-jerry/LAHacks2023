@@ -8,7 +8,9 @@ function NavBar() {
   return (
     <div>
       <div className={styles.container}>
-        <h1 className={styles.dopa_mind}>DopaMind</h1>
+        <Link to="/" className={styles.no_link}>
+          <h1 className={styles.dopa_mind}>DopaMind</h1>
+        </Link>
         <Link to="/games" className={styles.btn_info}>
           GAMES
         </Link>

@@ -2,17 +2,29 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/Sudoku.module.css';
 
 // Define the initial state of the game board
-const initialBoards = [[
-  [null, null, 5, 3, null, null, null, null, null],
-  [8, null, null, null, null, null, null, 2, null],
-  [null, 7, null, null, 1, null, 5, null, null],
-  [4, null, null, null, null, 5, 3, null, null],
-  [null, 1, null, null, 7, null, null, null, 6],
-  [null, null, 3, 2, null, null, null, 8, null],
-  [null, 6, null, 5, null, null, null, null, 9],
-  [null, null, 4, null, null, null, null, 3, null],
-  [null, null, null, null, null, 9, 7, null, null],
-]];
+// const initialBoards = [[
+//   [null, null, 5, 3, null, null, null, null, null],
+//   [8, null, null, null, null, null, null, 2, null],
+//   [null, 7, null, null, 1, null, 5, null, null],
+//   [4, null, null, null, null, 5, 3, null, null],
+//   [null, 1, null, null, 7, null, null, null, 6],
+//   [null, null, 3, 2, null, null, null, 8, null],
+//   [null, 6, null, 5, null, null, null, null, 9],
+//   [null, null, 4, null, null, null, null, 3, null],
+//   [null, null, null, null, null, 9, 7, null, null],
+// ]];
+const SIZE = 6;
+
+const initialBoards = [
+  [
+    [1, null, null, null, 4, null],
+    [null, 2, null, null, null, 5],
+    [null, null, 3, null, null, null],
+    [null, null, null, 4, null, null],
+    [5, null, null, null, 6, null],
+    [null, 6, null, null, null, 1],
+
+  ]];
 
 // Define the Sudoku component
 function Sudoku() {
@@ -37,7 +49,7 @@ function Sudoku() {
           <input
             type="number"
             min="1"
-            max="9"
+            max={SIZE}
             value={value || ''}
             onChange={(e) => handleCellChange(row, col, e.target.value)}
           />
@@ -53,9 +65,9 @@ function Sudoku() {
 
   function isValidSudoku() {
     // Check rows
-    for (let row = 0; row < 9; row += 1) {
+    for (let row = 0; row < SIZE; row += 1) {
       const rowSet = new Set();
-      for (let col = 0; col < 9; col += 1) {
+      for (let col = 0; col < SIZE; col += 1) {
         const val = board[row][col];
         if (val !== '.') {
           if (rowSet.has(val)) {
@@ -67,9 +79,9 @@ function Sudoku() {
     }
 
     // Check columns
-    for (let col = 0; col < 9; col += 1) {
+    for (let col = 0; col < SIZE; col += 1) {
       const colSet = new Set();
-      for (let row = 0; row < 9; row += 1) {
+      for (let row = 0; row < SIZE; row += 1) {
         const val = board[row][col];
         if (val !== '.') {
           if (colSet.has(val)) {
@@ -80,23 +92,23 @@ function Sudoku() {
       }
     }
 
-    // Check 3x3 boxes
-    for (let boxRow = 0; boxRow < 3; boxRow += 1) {
-      for (let boxCol = 0; boxCol < 3; boxCol += 1) {
-        const boxSet = new Set();
-        for (let row = boxRow * 3; row < boxRow * 3 + 3; row += 1) {
-          for (let col = boxCol * 3; col < boxCol * 3 + 3; col += 1) {
-            const val = board[row][col];
-            if (val !== '.') {
-              if (boxSet.has(val)) {
-                return false;
-              }
-              boxSet.add(val);
-            }
-          }
-        }
-      }
-    }
+    // // Check 3x3 boxes
+    // for (let boxRow = 0; boxRow < 3; boxRow += 1) {
+    //   for (let boxCol = 0; boxCol < 3; boxCol += 1) {
+    //     const boxSet = new Set();
+    //     for (let row = boxRow * 3; row < boxRow * 3 + 3; row += 1) {
+    //       for (let col = boxCol * 3; col < boxCol * 3 + 3; col += 1) {
+    //         const val = board[row][col];
+    //         if (val !== '.') {
+    //           if (boxSet.has(val)) {
+    //             return false;
+    //           }
+    //           boxSet.add(val);
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
 
     return true;
   }
