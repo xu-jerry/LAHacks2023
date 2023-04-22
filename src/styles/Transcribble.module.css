@@ -43,3 +43,10 @@
   background-color: rgba(255, 255, 255, 0);
   color: black;
 }
+
+.note {
+  margin-top: 2rem;
+  background-color: #a7d6c3;
+  padding: 1rem 2rem;
+  box-shadow: 4px 4px 8px rgba(05, 39, 24, 0.2);
+}
