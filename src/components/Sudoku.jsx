@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Sudoku.module.css';
+import circle from '../assets/circle.png';
+import triangle from '../assets/triangle.png';
+import square from '../assets/square.svg';
+import pentagon from '../assets/pentagon.png';
+import hexagon from '../assets/hexagon.png';
+import octagon from '../assets/octagon.png';
 
 // Define the initial state of the game board
 // const initialBoards = [[
@@ -14,6 +20,8 @@ import styles from '../styles/Sudoku.module.css';
 //   [null, null, null, null, null, 9, 7, null, null],
 // ]];
 const SIZE = 6;
+
+const numberToImage = [circle, triangle, square, pentagon, hexagon, octagon];
 
 const initialBoards = [
   [
@@ -57,6 +65,7 @@ function Sudoku() {
           <div>
             {' '}
             {initialBoards[curIndex][row][col]}
+            <img className={styles.icon} src={numberToImage[initialBoards[curIndex][row][col] - 1]} alt="shape" />
             {' '}
           </div>
         )
