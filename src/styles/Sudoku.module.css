@@ -1,0 +1,63 @@
+.sudoku_board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 450px;
+  height: 450px;
+  background-color: #ddd;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.sudoku_row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: calc(100% / 9);
+  border-bottom: 1px solid #aaa;
+}
+
+.sudoku_cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  width: calc(99% / 9);
+  height: 100%;
+  background-color: #fff;
+  border-right: 1px solid #aaa;
+}
+
+.sudoku_cell:last-child {
+  border-right: none;
+}
+
+.sudoku_cell.is-given {
+  background-color: #f9f9f9;
+  border-color: #bbb;
+}
+
+.sudoku_cell.is-selected {
+  background-color: #f0f0f0;
+}
+
+.sudoku_cell.is-invalid {
+  color: #f00;
+}
+
+.sudoku_cell.is-filled::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.sudoku_cell.is-filled.is-given::before {
+  background-color: #aaa;
+}
+
+.sudoku_cell.is-filled.is-invalid::before {
+  background-color: #f00;
+}
