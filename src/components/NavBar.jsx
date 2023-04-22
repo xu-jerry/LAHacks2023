@@ -15,8 +15,8 @@ function NavBar() {
           GAMES
         </Link>
         {/* TODO: have requests link instead for admin */}
-        <Link to="/chat" className={styles.btn_info}>
-          CHAT
+        <Link to="/transcribble" className={styles.btn_info}>
+          TRANSCRIBBLE
         </Link>
         <Link to="/timer" className={styles.btn_info}>
           TIMER
