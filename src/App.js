@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import {
   Example,
   Timer,
+  Writing,
 } from './pages';
 import NavBar from './components/NavBar';
 
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={(<Example />)} />
             <Route path="/example" element={(<Example />)} />
             <Route path="/timer" element={(<Timer />)} />
+            <Route path="/writing" element={(<Writing />)} />
           </Routes>
         </div>
       </div>
