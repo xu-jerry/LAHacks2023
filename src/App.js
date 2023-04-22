@@ -2,7 +2,7 @@ import { React } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import {
   Example, Games,
-  Timer, Resources,
+  Timer, Resources, Home,
 } from './pages';
 import NavBar from './components/NavBar';
 
@@ -13,7 +13,7 @@ function App() {
         <NavBar />
         <div>
           <Routes>
-            <Route path="/" element={(<Example />)} />
+            <Route path="/" element={(<Home />)} />
             <Route path="/example" element={(<Example />)} />
             <Route path="/games" element={(<Games />)} />
             <Route path="/timer" element={(<Timer />)} />
