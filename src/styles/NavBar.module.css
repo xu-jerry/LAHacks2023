@@ -1,0 +1,25 @@
+.container{
+    top: 0;
+    position: relative;
+    width: 100vw;
+    background: #053924;
+    box-shadow: 7px 4px 30px 2px rgba(0, 58, 34, 0.3);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.dopa_mind{
+    color: #f9f9f9;
+    padding-left: 2.5rem;
+    padding-right: 4rem;
+}
+
+.btn_info{
+    font-size: 1.1rem;
+    padding: 1rem;
+    color: #f9f9f9;
+    text-align: left;
+    text-decoration: none;
+    letter-spacing: 0.08rem;
+}
