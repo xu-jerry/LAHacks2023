@@ -156,7 +156,7 @@ function Transcribble() {
       </div>
       <br />
       {transcriptData.status === 'completed' ? (
-        <div>
+        <div className={styles.note}>
           <h2>{currentDateTime}</h2>
           <p>{transcript}</p>
         </div>
