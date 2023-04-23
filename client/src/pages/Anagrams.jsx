@@ -7,6 +7,8 @@ function Anagrams() {
   const [answer, setAnswer] = useState('');
   const [isCorrect, setIsCorrect] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [tried, setTried] = useState(false);
+
   const words = [
     'apple',
     'banana',
@@ -41,6 +43,7 @@ function Anagrams() {
     setAnswer('');
     setIsCorrect(false);
     setShowAnswer(false);
+    setTried(false);
   };
 
   useEffect(() => {
@@ -55,6 +58,7 @@ function Anagrams() {
     event.preventDefault();
     // Check if the user's answer is correct
     setIsCorrect(answer.toLowerCase() === word.toLowerCase());
+    setTried(true);
   };
 
   const handleNewWordClick = () => {
@@ -81,11 +85,11 @@ function Anagrams() {
       {isCorrect ? (
         <div>
           <p>You got it right!</p>
-          <button type="button" onClick={handleNewWordClick}>New Word</button>
+          <button type="button" className={styles.gray_btn} onClick={handleNewWordClick}>New Word</button>
         </div>
       ) : (
         <div>
-          <p>Sorry, that&apos;s not correct.</p>
+          {tried && <p>Sorry, that&apos;s not correct.</p>}
           {showAnswer && (
             <p>
               The answer was:
