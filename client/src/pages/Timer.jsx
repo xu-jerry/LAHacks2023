@@ -42,11 +42,12 @@ function Timer() {
 
   return (
     <div className={styles.timer}>
+      <h1>Calming Music</h1>
       <audio controls>
         <source src={water} type="audio/wav" />
         Your browser does not support the audio element.
       </audio>
-      <h1>{timerType === 'work' ? 'Work Timer' : 'Break Timer'}</h1>
+      <h1>{timerType === 'work' ? 'Work Timer 🍅' : 'Break Timer 🍅'}</h1>
       <h2>{formatTime(timer)}</h2>
       <button className={styles.butt} type="button" onClick={toggleTimer}>{isRunning ? 'Pause' : 'Start'}</button>
       <button className={styles.butt} type="button" onClick={resetTimer}>Reset</button>

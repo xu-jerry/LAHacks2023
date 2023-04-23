@@ -4,6 +4,7 @@ import styles from '../styles/Resources.module.css';
 function Resources() {
   return (
     <div className={styles.resources}>
+      <h1>Resources</h1>
       Welcome to our resource page for ADHD students looking to improve their focus, organization, and social skills! We understand that ADHD can present unique challenges in academic and social settings, and we&apos;ve compiled a list of helpful resources to support your success.
       <br />
       <br />
