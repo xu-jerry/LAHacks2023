@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useState, useEffect } from 'react';
-import water from '../assets/water.wav';
+import Waveform from '../components/Waveform';
 
 function Timer() {
   const [timer, setTimer] = useState(25 * 60);
@@ -41,10 +41,7 @@ function Timer() {
 
   return (
     <div>
-      <audio controls>
-        <source src={water} type="audio/wav" />
-        Your browser does not support the audio element.
-      </audio>
+      <Waveform />
       <h1>{timerType === 'work' ? 'Work Timer' : 'Break Timer'}</h1>
       <h2>{formatTime(timer)}</h2>
       <button type="button" onClick={toggleTimer}>{isRunning ? 'Pause' : 'Start'}</button>
