@@ -191,9 +191,12 @@ function Transcribble() {
         </div>
       ))}
       <br />
-      <div>
-        A wise mentor says:
-      </div>
+      {notes.length === 0 ? null
+        : (
+          <div>
+            A wise mentor says:
+          </div>
+        )}
       <div>
         {message}
       </div>
