@@ -29,9 +29,9 @@ cd server
 npm install
 npm start
 ```
-6. Enjoy!
+6. Enjoy! You can see the website at [localhost:3000](http://localhost:3000/), and the server at [localhost:5000/dopamind](http://localhost:5000/dopamind)!
 
 ## Credits
-Created by Alan Nguyen, Megan Tieu, Jerry Xu, and Juliet Zhang for LA Hacks 2023.
+Created with love by Alan Nguyen, Megan Tieu, Jerry Xu, and Juliet Zhang for LA Hacks 2023.
 
 Used AssemblyAI API and Cohere API.
