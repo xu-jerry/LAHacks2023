@@ -64,9 +64,10 @@ function Transcribble() {
   const [uploadURL, setUploadURL] = useState('');
   const [transcriptID, setTranscriptID] = useState('');
   const [transcriptData, setTranscriptData] = useState('');
-  const [transcript, setTranscript] = useState('');
+  const [transcripts, setTranscripts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const currentDateTime = new Date().toLocaleString();
+  const [dateTimes, setDateTimes] = useState([]);
+  // const currentDateTime = new Date().toLocaleString();
 
   // Upload the Audio File and retrieve the Upload URL
   useEffect(() => {
@@ -110,10 +111,10 @@ function Transcribble() {
     const interval = setInterval(() => {
       if (transcriptData.status !== 'completed' && isLoading) {
         checkStatusHandler();
-      } else {
+      } else if (isLoading) {
         setIsLoading(false);
-        setTranscript(transcriptData.text);
-
+        setTranscripts([...transcripts, transcriptData.text]);
+        setDateTimes([...dateTimes, new Date().toLocaleString()]);
         clearInterval(interval);
       }
     }, 1000);
@@ -166,13 +167,17 @@ function Transcribble() {
       </div>
       <br />
       {transcriptData.status === 'completed' ? (
-        <div className={styles.note}>
-          <h2>{currentDateTime}</h2>
-          <p>{transcript}</p>
-        </div>
-      ) : (
-        <p>{transcriptData.status}</p>
-      )}
+        transcripts.map((transcript, i) => (
+          <div className={styles.note}>
+            <h2>{dateTimes[i]}</h2>
+            <p>{transcript}</p>
+          </div>
+        )).reverse())
+        : (
+          <div>
+            <p>{transcriptData.status}</p>
+          </div>
+        )}
       <h3> Or dislike talking? Jot down your thoughts on these notes:</h3>
       <form onSubmit={(e) => { addToNotes(e); }}>
         <input type="text" onChange={(e) => setNote(e.target.value)} />
@@ -186,9 +191,12 @@ function Transcribble() {
         </div>
       ))}
       <br />
-      <div>
-        A wise mentor says:
-      </div>
+      {notes.length === 0 ? null
+        : (
+          <div>
+            A wise mentor says:
+          </div>
+        )}
       <div>
         {message}
       </div>
