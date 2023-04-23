@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
+
+.timer {
+    background-image: url("../assets/timer.png");
+    width: 100vw;
+    height: auto;
+    overflow: scroll;
+    z-index: -1;
+}
+
+.butt {
+    color: white;
+    background-color: #053924;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+  }
