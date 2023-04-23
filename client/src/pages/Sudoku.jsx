@@ -164,7 +164,7 @@ function Sudoku() {
       setMessage("Yay! You've solved the game!");
       setCurIndex(0);
     } else {
-      setMessage('Sorry :(');
+      setMessage('Try again :(');
     }
   }
 
@@ -189,20 +189,23 @@ function Sudoku() {
   // Render the game board
   return (
     <div className={styles.sudoku}>
-      {console.log(initialBoards[0][0][1])}
-      {board.map((row, rowIndex) => (
-        <div className={styles.sudoku_row}>
-          {row.map((cell, colIndex) => (
-            <div className={styles.sudoku_cell}>
-              {renderCell(rowIndex, colIndex, initialBoards[curIndex][rowIndex][colIndex] == null)}
-            </div>
-          ))}
-          <br />
-        </div>
-      ))}
-      <form>
-        <input onClick={(e) => checkBoard(e)} type="submit" value="Submit" />
-        <input onClick={(e) => reset(e)} type="reset" value="Reset" />
+      <h1>Sudoku</h1>
+      <div className={styles.sudoku_board}>
+        {console.log(initialBoards[0][0][1])}
+        {board.map((row, rowIndex) => (
+          <div className={styles.sudoku_row}>
+            {row.map((cell, colIndex) => (
+              <div className={styles.sudoku_cell}>
+                {renderCell(rowIndex, colIndex, initialBoards[curIndex][rowIndex][colIndex] == null)}
+              </div>
+            ))}
+            <br />
+          </div>
+        ))}
+      </div>
+      <form className={styles.buttons_container}>
+        <input onClick={(e) => checkBoard(e)} type="submit" className={styles.submit_btn} value="Submit" />
+        <input onClick={(e) => reset(e)} type="reset" className={styles.reset_btn} value="Reset" />
       </form>
       <div>{message}</div>
     </div>
