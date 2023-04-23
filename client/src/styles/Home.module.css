@@ -1,4 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap');
+
 .home {
     background-image: url("../assets/home_background.png");
     height: 100vh;
+    z-index: -1;
+    position: fixed;
+}
+
+.home1 {
+    z-index: 1;
+    padding: 0;
+    margin: 8rem 2.5rem 0 2.5rem;
+    padding: 2rem 3.5rem;
+    color: white;
+    background-color: #00000067;
+}
+
+.home h1 {
+    font-family: 'Playfair Display';
+    font-size: 3rem;
+}
+
+.home p {
+    font-family: 'Poppins';
+    font-size: 1.1rem;
 }

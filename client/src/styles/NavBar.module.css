@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
+
 .container{
     top: 0;
     position: relative;
@@ -7,7 +9,12 @@
     box-shadow: 7px 4px 30px 2px rgba(0, 58, 34, 0.3);
     display: flex;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 0 0;
+}
+
+.container h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
 .dopa_mind{
@@ -17,6 +24,7 @@
 }
 
 .btn_info{
+    font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
     padding: 1rem;
     color: #f9f9f9;
