@@ -4,6 +4,7 @@ import {
 import MicRecorder from 'mic-recorder-to-mp3';
 import axios from 'axios';
 import styles from '../styles/Transcribble.module.css';
+import cohere from '../api';
 
 // Set AssemblyAI Axios Header
 const assembly = axios.create({
@@ -25,6 +26,7 @@ function Transcribble() {
   const [doneRecording, setDoneRecording] = useState(false);
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState('');
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     recorder.current = new MicRecorder({ bitRate: 128 });
@@ -121,6 +123,7 @@ function Transcribble() {
   const addToNotes = (event) => {
     event.preventDefault();
     setNotes([...notes, note]);
+    cohere(note).then((res) => setMessage(res));
   };
 
   return (
@@ -182,7 +185,13 @@ function Transcribble() {
           {' '}
         </div>
       ))}
-
+      <br />
+      <div>
+        A wise mentor says:
+      </div>
+      <div>
+        {message}
+      </div>
     </div>
   );
 }
