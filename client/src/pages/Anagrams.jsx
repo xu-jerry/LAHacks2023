@@ -67,7 +67,7 @@ function Anagrams() {
 
   return (
     <div className={styles.anagrams}>
-      <h1>Anagrams Game</h1>
+      <h1>Anagrams</h1>
       <p>Unscramble the word below:</p>
       <h2 className={styles.scrambled_word}>{scrambledWord}</h2>
       <form onSubmit={handleSubmit}>
