@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styles from '../styles/Anagrams.module.css';
 
 function Anagrams() {
   const [word, setWord] = useState('');
@@ -65,16 +66,17 @@ function Anagrams() {
   };
 
   return (
-    <div>
+    <div className={styles.anagrams}>
       <h1>Anagrams Game</h1>
       <p>Unscramble the word below:</p>
-      <h2>{scrambledWord}</h2>
+      <h2 className={styles.scrambled_word}>{scrambledWord}</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="answerInput">
           Answer:
+          {' '}
           <input type="text" id="answerInput" value={answer} onChange={handleAnswerChange} />
         </label>
-        <button type="submit">Submit</button>
+        <button className={styles.submit_btn} type="submit">Submit</button>
       </form>
       {isCorrect ? (
         <div>
@@ -91,8 +93,8 @@ function Anagrams() {
               {word}
             </p>
           )}
-          <button type="button" onClick={handleRevealAnswerClick}>Reveal Answer</button>
-          <button type="button" onClick={handleNewWordClick}>New Word</button>
+          <button className={styles.gray_btn} type="button" onClick={handleRevealAnswerClick}>Reveal Answer</button>
+          <button className={styles.gray_btn} type="button" onClick={handleNewWordClick}>New Word</button>
         </div>
       )}
     </div>

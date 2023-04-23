@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/Games.module.css';
 import Sudoku from '../assets/sudoku.png';
+import Anagrams from '../assets/anagrams.png';
 
 function Games() {
   return (
@@ -15,7 +16,7 @@ function Games() {
         </Link>
         <Link to="/games/anagrams">
           <div className={styles.card}>
-            <img src="https://reactjs.org/logo-og.png" alt="Anagrams thumbnail" className={styles.card_image} />
+            <img src={Anagrams} alt="Anagrams thumbnail" className={styles.card_image} />
             <p className={styles.card_name}>Anagrams</p>
           </div>
         </Link>
