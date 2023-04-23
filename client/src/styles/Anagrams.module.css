@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap");
+
+.anagrams {
+  margin: 2.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.scrambled_word {
+  color: #053924;
+  font-size: 2rem;
+}
+
+input {
+  margin-right: 1rem;
+  border: none;
+  border-bottom: 1.5px solid black;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  margin-right: 1rem;
+}
+
+.submit_btn {
+  color: white;
+  background-color: #053924;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+}
+
+.submit_btn:hover {
+  background-color: #0c8e5a;
+}
+
+.submit_btn:active {
+  background-color: #0c8e5a;
+  box-shadow: 2px 2px 5px #0539246f;
+  transform: translateY(1px);
+}
+
+.gray_btn {
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border: none;
+  margin-top: 0.5rem;
+}
+
+.gray_btn:hover {
+  background-color: #bababa;
+}
+
+.gray_btn:active {
+  background-color: #bababa;
+  box-shadow: 2px 2px 5px #767676;
+  transform: translateY(1px);
+}

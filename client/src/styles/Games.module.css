@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
+
+.games {
+    background-image: url("../assets/games_background.png");
+    height: 100vh;
+    font-family: 'Poppins';
+}
+
+.cards_container {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.card {
+    display: inline-block;
+    background-color: #e3f0eb;
+    border-radius: 10px;
+    margin: 5rem 2.5rem;
+    text-align: center;
+    padding: 0 1rem;
+    height: 33vw;
+}
+
+.card_image {
+    width: 95%;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+.card_name {
+    font-weight: bold;
+    font-size: 2rem;
+    color: black;
+}

@@ -5,6 +5,8 @@ import Timer from './Timer';
 import Writing from './Writing'
 import Resources from './Resources';
 import Home from './Home';
+import Sudoku from './Sudoku';
+import Anagrams from './Anagrams';
 
 export {
   Transcribble,
@@ -12,5 +14,7 @@ export {
   Timer,
   Writing,
   Resources,
-  Home
+  Home,
+  Sudoku,
+  Anagrams,
 };

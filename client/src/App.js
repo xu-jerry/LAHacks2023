@@ -7,6 +7,8 @@ import {
   Writing,
   Games,
   Resources,
+  Sudoku,
+  Anagrams,
 } from './pages';
 import NavBar from './components/NavBar';
 
@@ -23,6 +25,8 @@ function App() {
             <Route path="/timer" element={(<Timer />)} />
             <Route path="/chat" element={(<Writing />)} />
             <Route path="/resources" element={(<Resources />)} />
+            <Route path="/games/sudoku" element={(<Sudoku />)} />
+            <Route path="/games/anagrams" element={(<Anagrams />)} />
           </Routes>
         </div>
       </div>
