@@ -23,6 +23,8 @@ function Transcribble() {
   const [audioFile, setAudioFile] = useState(null);
   const [isRecording, setIsRecording] = useState(null);
   const [doneRecording, setDoneRecording] = useState(false);
+  const [notes, setNotes] = useState([]);
+  const [note, setNote] = useState('');
 
   useEffect(() => {
     recorder.current = new MicRecorder({ bitRate: 128 });
@@ -116,6 +118,11 @@ function Transcribble() {
     return () => clearInterval(interval);
   });
 
+  const addToNotes = (event) => {
+    event.preventDefault();
+    setNotes([...notes, note]);
+  };
+
   return (
     <div className={styles.transcribble}>
       <h1>Transcribble</h1>
@@ -163,6 +170,19 @@ function Transcribble() {
       ) : (
         <p>{transcriptData.status}</p>
       )}
+      <h3> Or dislike talking? Jot down your thoughts on these notes:</h3>
+      <form onSubmit={(e) => { addToNotes(e); }}>
+        <input type="text" onChange={(e) => setNote(e.target.value)} />
+        <input type="submit" />
+      </form>
+      {notes.map((n) => (
+        <div>
+          {' '}
+          {n}
+          {' '}
+        </div>
+      ))}
+
     </div>
   );
 }
