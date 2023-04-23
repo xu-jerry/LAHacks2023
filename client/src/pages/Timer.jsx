@@ -71,7 +71,7 @@ function Timer() {
           />
           Break Timer
         </label>
-        </div>
+      </div>
     </div>
   );
 }
